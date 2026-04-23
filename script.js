@@ -1,35 +1,35 @@
-// HeyTea Dynamic Scaling
-(function (doc, win) {
-    var docEI = doc.documentElement,
-        recalc = function () {
-            var clientWidth = docEI.clientWidth;
-            if (!clientWidth) return;
-            // 1920 is the base width. Everything scales relative to this.
-            docEI.style.fontSize = 100 * (clientWidth / 1920) + "px";
-            
-            // Mobile fix: If screen is small, boost the font size
-            if (clientWidth < 768) {
-                docEI.style.fontSize = 100 * (clientWidth / 400) + "px";
-            }
-        };
-    win.addEventListener("resize", recalc, false);
-    doc.addEventListener("DOMContentLoaded", recalc, false);
-})(document, window);
 
-// Filtering Logic
-function filter(category) {
-    const cards = document.querySelectorAll('.card');
-    const btns = document.querySelectorAll('.filter-bar button');
-    
-    // Update active button
-    btns.forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
+(function () {
+    const doc = document.documentElement;
+
+    function recalc() {
+        const w = doc.clientWidth;
+
+        if (w < 768) {
+            doc.style.fontSize = (w / 400) * 100 + "px";
+        } else {
+            doc.style.fontSize = (w / 1920) * 100 + "px";
+        }
+    }
+
+    window.addEventListener("resize", recalc);
+    document.addEventListener("DOMContentLoaded", recalc);
+})();
+
+
+// Filter system
+function filter(category, event) {
+    const cards = document.querySelectorAll(".card");
+    const buttons = document.querySelectorAll(".filter-bar button");
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+    if (event) event.target.classList.add("active");
 
     cards.forEach(card => {
-        if (category === 'all' || card.classList.contains(category)) {
-            card.style.display = 'block';
+        if (category === "all" || card.classList.contains(category)) {
+            card.style.display = "block";
         } else {
-            card.style.display = 'none';
+            card.style.display = "none";
         }
     });
 }
