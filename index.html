@@ -3,55 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique Bubble Tea | Menu</title>
+    <title>TEA BAR | Menu</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <div class="logo">TEA BAR</div>
-        <nav>
-            <ul>
-                <li><a href="#fruit" class="active">Fruit Tea</a></li>
-                <li><a href="#milk">Milk Tea</a></li>
-                <li><a href="#seasonal">Seasonal</a></li>
-            </ul>
+        <div class="brand">TEA BAR</div>
+        <nav class="category-nav">
+            <button class="nav-btn active" onclick="filterMenu('all', this)">All</button>
+            <button class="nav-btn" onclick="filterMenu('fruit', this)">Fresh Fruit</button>
+            <button class="nav-btn" onclick="filterMenu('cheese', this)">Cheezo</button>
+            <button class="nav-btn" onclick="filterMenu('milk', this)">Milk Tea</button>
         </nav>
     </header>
 
     <main>
-        <section id="fruit">
-            <h2 class="category-title">Fresh Fruit Series</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="image-placeholder" style="background-color: #ffebd2;">
-                        <span class="emoji">🥭</span>
-                    </div>
-                    <div class="item-info">
-                        <h3>Mango Grapefruit Sago</h3>
-                        <p>Fresh mango puree with pomelo and sago pearls.</p>
-                        <span class="price">$7.50</span>
-                    </div>
+        <div class="hero">
+            <h1>Inspiration <br><span>In Every Sip.</span></h1>
+        </div>
+
+        <div class="menu-container" id="menu-grid">
+            <div class="item fruit">
+                <div class="img-wrapper" style="background-color: #FFF4E0;">
+                    <img src="https://via.placeholder.com/300x400/FFF4E0/000000?text=Mango+Grapefruit" alt="Mango Sago">
                 </div>
-                <div class="menu-item">
-                    <div class="image-placeholder" style="background-color: #ffe4e1;">
-                        <span class="emoji">🍓</span>
-                    </div>
-                    <div class="item-info">
-                        <h3>Very Strawberry Cheezo</h3>
-                        <p>Fresh strawberries topped with savory cheese foam.</p>
-                        <span class="price">$8.00</span>
-                    </div>
+                <div class="details">
+                    <h3>Mango Grapefruit Sago</h3>
+                    <p>Real mango pulp, pomelo bits, and sago.</p>
+                    <div class="price">$7.50</div>
                 </div>
             </div>
-        </section>
+
+            <div class="item cheese">
+                <div class="img-wrapper" style="background-color: #FDECEC;">
+                    <img src="https://via.placeholder.com/300x400/FDECEC/000000?text=Strawberry+Cheezo" alt="Strawberry">
+                </div>
+                <div class="details">
+                    <h3>Very Strawberry Cheezo</h3>
+                    <p>Hand-smashed strawberries with jasmine green tea.</p>
+                    <div class="price">$8.00</div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>Visit us at our Downtown Location</p>
-        <p>Mon-Sun: 11am - 10pm</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
