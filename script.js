@@ -1,27 +1,35 @@
-function filterMenu(category, btn) {
-    const items = document.querySelectorAll('.item');
-    const buttons = document.querySelectorAll('.nav-btn');
-
-    // Update active button state
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    items.forEach(item => {
-        // Start animation out
-        item.style.opacity = '0';
-        item.style.transform = 'scale(0.95)';
-
-        setTimeout(() => {
-            if (category === 'all' || item.classList.contains(category)) {
-                item.style.display = 'block';
-                // Trigger reflow for animation
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'scale(1)';
-                }, 50);
-            } else {
-                item.style.display = 'none';
+// HeyTea Dynamic Scaling
+(function (doc, win) {
+    var docEI = doc.documentElement,
+        recalc = function () {
+            var clientWidth = docEI.clientWidth;
+            if (!clientWidth) return;
+            // 1920 is the base width. Everything scales relative to this.
+            docEI.style.fontSize = 100 * (clientWidth / 1920) + "px";
+            
+            // Mobile fix: If screen is small, boost the font size
+            if (clientWidth < 768) {
+                docEI.style.fontSize = 100 * (clientWidth / 400) + "px";
             }
-        }, 300);
+        };
+    win.addEventListener("resize", recalc, false);
+    doc.addEventListener("DOMContentLoaded", recalc, false);
+})(document, window);
+
+// Filtering Logic
+function filter(category) {
+    const cards = document.querySelectorAll('.card');
+    const btns = document.querySelectorAll('.filter-bar button');
+    
+    // Update active button
+    btns.forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
     });
 }
