@@ -1,20 +1,27 @@
-function filterMenu(category, element) {
-    const items = document.querySelectorAll('.menu-item');
-    
-    // 1. Handle the "Active" button styling
-    const buttons = document.querySelectorAll('nav a');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    if (element) element.classList.add('active');
+function filterMenu(category, btn) {
+    const items = document.querySelectorAll('.item');
+    const buttons = document.querySelectorAll('.nav-btn');
 
-    // 2. Filter the items
+    // Update active button state
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
     items.forEach(item => {
-        // We use a small timeout or CSS classes for a fade effect
-        if (category === 'all' || item.classList.contains(category)) {
-            item.style.display = 'block';
-            setTimeout(() => { item.style.opacity = '1'; }, 10);
-        } else {
-            item.style.opacity = '0';
-            item.style.display = 'none';
-        }
+        // Start animation out
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.95)';
+
+        setTimeout(() => {
+            if (category === 'all' || item.classList.contains(category)) {
+                item.style.display = 'block';
+                // Trigger reflow for animation
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 50);
+            } else {
+                item.style.display = 'none';
+            }
+        }, 300);
     });
 }
