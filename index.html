@@ -3,102 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Molly’s Bubble Tea Menu</title>
-
+  <title>Molly’s Bubble Tea</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
 
-<header class="zen-header">
-  <div class="logo">🧋 MOLLY’S TEA</div>
+<header class="header">
+  <h1>🧋 Molly’s Bubble Tea</h1>
 
-  <div class="filter-bar">
-    <button class="active" onclick="filter('all', event)">All</button>
-    <button onclick="filter('milk', event)">Milk Tea</button>
-    <button onclick="filter('fruit', event)">Fruit Tea</button>
-    <button onclick="filter('food', event)">Food</button>
+  <div class="filters">
+    <button class="active" onclick="filterMenu('all', event)">All</button>
+    <button onclick="filterMenu('milk', event)">Milk Tea</button>
+    <button onclick="filterMenu('fruit', event)">Fruit Tea</button>
+    <button onclick="filterMenu('food', event)">Food</button>
   </div>
 </header>
 
-<main class="menu-wall">
+<main class="grid">
 
   <!-- MILK TEA -->
   <div class="card milk">
-    <div class="img-box">
-      <img src="https://images.unsplash.com/photo-1558857563-b371033873b8" />
-    </div>
-    <div class="info">
-      <h3>Classic Milk Tea</h3>
-      <p>Rich black tea with creamy milk</p>
-      <span class="price">$5.50</span>
-    </div>
+    <img src="https://images.unsplash.com/photo-1558857563-b371033873b8" />
+    <h3>Classic Milk Tea</h3>
+    <p>Rich black tea with milk</p>
+    <span>$5.50</span>
   </div>
 
   <div class="card milk">
-    <div class="img-box">
-      <img src="https://images.unsplash.com/photo-1604908177522-0408efd0f5a2" />
-    </div>
-    <div class="info">
-      <h3>Taro Milk Tea</h3>
-      <p>Sweet taro blended with milk</p>
-      <span class="price">$6.00</span>
-    </div>
+    <img src="https://images.unsplash.com/photo-1604908177522-0408efd0f5a2" />
+    <h3>Taro Milk Tea</h3>
+    <p>Sweet taro flavor</p>
+    <span>$6.00</span>
   </div>
 
   <!-- FRUIT TEA -->
   <div class="card fruit">
-    <div class="img-box">
-      <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87" />
-    </div>
-    <div class="info">
-      <h3>Mango Green Tea</h3>
-      <p>Fresh mango with green tea base</p>
-      <span class="price">$5.75</span>
-    </div>
+    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87" />
+    <h3>Mango Green Tea</h3>
+    <p>Fresh mango + green tea</p>
+    <span>$5.75</span>
   </div>
 
   <div class="card fruit">
-    <div class="img-box">
-      <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" />
-    </div>
-    <div class="info">
-      <h3>Strawberry Tea</h3>
-      <p>Fruity strawberry refreshing tea</p>
-      <span class="price">$5.75</span>
-    </div>
+    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" />
+    <h3>Strawberry Tea</h3>
+    <p>Sweet & refreshing</p>
+    <span>$5.75</span>
   </div>
 
   <!-- FOOD -->
   <div class="card food">
-    <div class="img-box">
-      <img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd9d" />
-    </div>
-    <div class="info">
-      <h3>Noodles</h3>
-      <p>Hot savory noodle bowl</p>
-      <span class="price">$8.50</span>
-    </div>
+    <img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd9d" />
+    <h3>Noodles</h3>
+    <p>Hot savory noodles</p>
+    <span>$8.50</span>
   </div>
 
   <div class="card food">
-    <div class="img-box">
-      <img src="https://images.unsplash.com/photo-1605478371310-a9f1b1b6a2d5" />
-    </div>
-    <div class="info">
-      <h3>Egg Waffle</h3>
-      <p>Crispy Hong Kong style waffle</p>
-      <span class="price">$6.50</span>
-    </div>
+    <img src="https://images.unsplash.com/photo-1605478371310-a9f1b1b6a2d5" />
+    <h3>Egg Waffle</h3>
+    <p>Crispy & soft dessert</p>
+    <span>$6.50</span>
   </div>
 
   <div class="card food">
-    <div class="img-box"></div>
-    <div class="info">
-      <h3>Hotpot</h3>
-      <p>Premium hotpot experience</p>
-      <span class="price coming">Coming Soon</span>
-    </div>
+    <h3>Hotpot</h3>
+    <p>Premium hotpot experience</p>
+    <span class="coming">Coming Soon</span>
   </div>
 
 </main>
